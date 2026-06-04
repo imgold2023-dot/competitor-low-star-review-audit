@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Competitor Low-Star Review Audit</title>
+  <meta name="description" content="A competitor low-star review audit sample for indie builders, SaaS founders, Shopify App developers, and automation service providers.">
+  <meta property="og:title" content="Competitor Low-Star Review Audit">
+  <meta property="og:description" content="Read public competitor complaints before choosing a SaaS, App, plugin, or automation wedge.">
+  <style>
+    :root {
+      --bg: #f5f5f0;
+      --paper: #fffdf8;
+      --ink: #202522;
+      --muted: #5e6861;
+      --line: #d8ddd5;
+      --green: #0d7158;
+      --blue: #255f9f;
+      --amber: #986700;
+      --red: #a63c33;
+      --soft: #e8f2ec;
+      --white: #ffffff;
+      --shadow: 0 20px 50px rgba(26, 32, 28, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.58;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: rgba(245, 245, 240, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar-inner,
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .topbar-inner {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .page {
+      padding-top: 42px;
+      padding-bottom: 64px;
+    }
+
+    .status {
+      display: inline-flex;
+      padding: 6px 10px;
+      border: 1px solid #d9c78d;
+      border-radius: 999px;
+      background: #fff7d8;
+      color: #6d4b00;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+      gap: 30px;
+      align-items: start;
+      margin-top: 18px;
+    }
+
+    h1 {
+      margin: 18px 0 0;
+      font-size: 46px;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 690px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--ink);
+      padding: 10px 14px;
+      font-weight: 800;
+    }
+
+    .button.primary {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+
+    .proof-list {
+      margin: 22px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .proof-list li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 9px;
+      align-items: start;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      margin-top: 9px;
+      border-radius: 999px;
+      background: var(--green);
+    }
+
+    .report-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .report-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+    }
+
+    .report-head h2 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .tag {
+      flex: none;
+      border: 1px solid #bad4c9;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--green);
+      padding: 5px 9px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfaf4;
+      padding: 10px;
+      min-height: 84px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.15;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .verdicts {
+      display: grid;
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .verdict {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: var(--white);
+      font-size: 14px;
+    }
+
+    .label {
+      font-weight: 900;
+      color: var(--green);
+    }
+
+    .label.narrow {
+      color: var(--amber);
+    }
+
+    .label.hold {
+      color: var(--blue);
+    }
+
+    .label.reject {
+      color: var(--red);
+    }
+
+    .section {
+      margin-top: 52px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    .section-copy {
+      margin: 12px 0 0;
+      color: var(--muted);
+      max-width: 780px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 18px;
+    }
+
+    .panel h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .panel p,
+    .panel ul {
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    .panel ul {
+      padding-left: 18px;
+    }
+
+    .table-wrap {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow-x: auto;
+      background: var(--white);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eef3ed;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .boundary {
+      margin-top: 18px;
+      border-left: 4px solid var(--green);
+      background: var(--white);
+      padding: 14px 16px;
+      color: #2d3630;
+    }
+
+    .footer {
+      margin-top: 42px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .verdict {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Competitor Low-Star Review Audit</div>
+      <nav class="nav" aria-label="Page navigation">
+        <a href="#sample">Sample</a>
+        <a href="sample-report.html">Full report</a>
+        <a href="#offer">Offer</a>
+        <a href="#fit">Fit</a>
+        <a href="#contact">Inquiry</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <span class="status">Validation page: inquiries first, no automatic checkout</span>
+
+    <section class="hero">
+      <div>
+        <h1>Read competitor complaints before building the next feature.</h1>
+        <p class="lead">Send one product category or 3-5 public competitor links. I review public pricing, low-star reviews, community threads, and free substitutes, then return a short decision report.</p>
+
+        <ul class="proof-list">
+          <li><span class="dot"></span><span>No customer accounts, order data, payment data, private dashboards, or cookies.</span></li>
+          <li><span class="dot"></span><span>The report says what to test, what to narrow, what to hold, and what to avoid.</span></li>
+          <li><span class="dot"></span><span>Best for indie builders, small SaaS teams, Shopify App developers, Chrome extension builders, and automation service providers.</span></li>
+        </ul>
+
+        <div class="actions">
+          <a class="button primary" href="sample-report.html">Read the full sample</a>
+          <a class="button" href="#contact">Ask for an audit</a>
+        </div>
+      </div>
+
+      <aside class="report-card" id="sample" aria-label="Sample report preview">
+        <div class="report-head">
+          <h2>Sample: Shopify returns and exchange apps</h2>
+          <span class="tag">Free sample v0.1</span>
+        </div>
+
+        <div class="metrics">
+          <div class="metric"><strong>4</strong><span>public competitors reviewed</span></div>
+          <div class="metric"><strong>5</strong><span>pricing bands and substitute checks</span></div>
+          <div class="metric"><strong>8</strong><span>complaint buckets</span></div>
+          <div class="metric"><strong>6</strong><span>decision labels</span></div>
+        </div>
+
+        <div class="verdicts">
+          <div class="verdict"><span class="label">Proceed</span><span>Pre-launch checklist for merchants choosing a returns app.</span></div>
+          <div class="verdict"><span class="label">Proceed</span><span>Low-star review audit for a narrow App category.</span></div>
+          <div class="verdict"><span class="label narrow">Narrow</span><span>Lightweight workflow for low-return-volume merchants.</span></div>
+          <div class="verdict"><span class="label narrow">Narrow</span><span>Shopify Markets and multi-currency returns review.</span></div>
+          <div class="verdict"><span class="label hold">Hold</span><span>Another full returns platform.</span></div>
+          <div class="verdict"><span class="label reject">Reject</span><span>Automatic refund or dispute handling.</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <h2>The sample conclusion</h2>
+      <p class="section-copy">The Shopify returns category is not empty, but the first wedge should not be another full returns platform. AfterShip, Loop, Return Prime, and ReturnGO already cover portals, labels, exchanges, rules, reporting, and store credit. The useful signal is where merchants still hit repeated friction.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Observed friction</th>
+              <th>Why it matters</th>
+              <th>Possible wedge</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Plan limits discovered late</td>
+              <td>Merchants can spend time configuring before realizing the workflow needs a higher plan.</td>
+              <td>Pre-launch plan and feature checklist.</td>
+            </tr>
+            <tr>
+              <td>Label, carrier, and multi-item edge cases</td>
+              <td>Small setup errors can turn into support tickets.</td>
+              <td>Return label setup review.</td>
+            </tr>
+            <tr>
+              <td>Returns, exchanges, store credit, and reporting are tangled</td>
+              <td>Revenue retention depends on the details, not just the portal.</td>
+              <td>Returns vs exchanges reporting template.</td>
+            </tr>
+            <tr>
+              <td>Low-volume merchants are price-sensitive</td>
+              <td>A $100+/month platform may not fit stores with low return volume.</td>
+              <td>Lightweight native Shopify plus simple process guide.</td>
+            </tr>
+            <tr>
+              <td>Markets, multi-currency, and domain complexity</td>
+              <td>Narrower, higher-friction setups may justify custom review.</td>
+              <td>Compatibility audit for advanced Shopify stores.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="offer">
+      <h2>What a paid audit includes</h2>
+      <p class="section-copy">This is not a broad market report. It is a pre-build decision artifact: what buyers complain about, which complaints repeat across competitors, what substitutes already exist, and what a 7-day validation should test.</p>
+
+      <div class="grid">
+        <div class="panel">
+          <h3>Competitor snapshot</h3>
+          <p>3-5 competitors, public reviews, pricing, positioning, visible substitutes, and trust signals.</p>
+        </div>
+        <div class="panel">
+          <h3>Complaint buckets</h3>
+          <p>Low-star reviews grouped by price, setup, support, feature boundaries, integrations, reporting, or workflow risk.</p>
+        </div>
+        <div class="panel">
+          <h3>Decision labels</h3>
+          <p>Proceed, Narrow, Hold, or Reject, with the reason and a smallest validation action.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fit">
+      <h2>Who this is for</h2>
+      <div class="grid">
+        <div class="panel">
+          <h3>Good fit</h3>
+          <ul>
+            <li>You are choosing a SaaS, App, plugin, template, or automation category.</li>
+            <li>You want to avoid building around generic feature ideas.</li>
+            <li>You can provide a narrow category or public competitor links.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Not a fit</h3>
+          <ul>
+            <li>You need someone to log into customer accounts or private dashboards.</li>
+            <li>You want automated refunds, payment handling, disputes, or legal commitments.</li>
+            <li>You want a guarantee that a product will make money.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Price test</h3>
+          <ul>
+            <li>Standard audit: $49-$99, 48 hours.</li>
+            <li>Custom audit: $149-$299, 3-5 days.</li>
+            <li>Monthly monitoring: not open during this first validation week.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Ask for an audit</h2>
+      <p class="section-copy">Send one product category or 3-5 public competitor links. I will first say whether the category is suitable for this format. If it is too broad or too risky, I will say that directly.</p>
+
+      <div class="boundary">
+        <strong>Boundary:</strong> this service only uses public information. It does not use customer logins, private data, production tokens, cookies, payment credentials, order data, refunds, disputes, or account automation.
+      </div>
+
+      <div class="actions">
+          <a class="button primary" href="https://ko-fi.com/imgold">Send an inquiry via Ko-fi profile</a>
+          <a class="button" href="sample-report.html">Read the full sample report</a>
+          <a class="button" href="https://github.com/imgold2023-dot/ai-coding-qa-workflow-kit">See existing public work</a>
+        </div>
+    </section>
+
+    <p class="footer">Founder must confirm payment platform rules, refund terms, delivery promises, tax, foreign exchange, and final publication before accepting paid orders.</p>
+  </main>
+</body>
+</html>

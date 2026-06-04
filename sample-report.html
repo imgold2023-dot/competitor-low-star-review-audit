@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample Report: Shopify Returns Apps</title>
+  <meta name="description" content="A free sample competitor low-star review audit for Shopify returns and exchange apps.">
+  <style>
+    :root {
+      --bg: #f5f5f0;
+      --paper: #fffdf8;
+      --ink: #202522;
+      --muted: #5e6861;
+      --line: #d8ddd5;
+      --green: #0d7158;
+      --blue: #255f9f;
+      --amber: #986700;
+      --red: #a63c33;
+      --soft: #e8f2ec;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.62;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      border-bottom: 1px solid var(--line);
+      background: rgba(245, 245, 240, 0.96);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar-inner,
+    .page {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .topbar-inner {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-weight: 800;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .page {
+      padding-top: 36px;
+      padding-bottom: 64px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      border: 1px solid #bad4c9;
+      background: var(--soft);
+      color: var(--green);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h1 {
+      max-width: 840px;
+      margin: 18px 0 0;
+      font-size: 42px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .meta {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .meta div,
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .meta div {
+      padding: 12px;
+    }
+
+    .meta strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .meta span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .section {
+      margin-top: 46px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    .section p {
+      max-width: 820px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .card p,
+    .card ul {
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    .card ul {
+      padding-left: 18px;
+    }
+
+    .table-wrap {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow-x: auto;
+      background: var(--white);
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eef3ed;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .label {
+      font-weight: 900;
+      color: var(--green);
+    }
+
+    .label.narrow {
+      color: var(--amber);
+    }
+
+    .label.hold {
+      color: var(--blue);
+    }
+
+    .label.reject {
+      color: var(--red);
+    }
+
+    .quote {
+      border-left: 4px solid var(--green);
+      background: var(--paper);
+      padding: 14px 16px;
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--ink);
+      padding: 10px 14px;
+      font-weight: 800;
+    }
+
+    .button.primary {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+
+    .footer {
+      margin-top: 44px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 820px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .meta,
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Sample Report</div>
+      <nav class="nav" aria-label="Page navigation">
+        <a href="index.html">Audit page</a>
+        <a href="#verdict">Verdict</a>
+        <a href="#complaints">Complaints</a>
+        <a href="#validation">Validation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <span class="kicker">Free sample v0.1</span>
+    <h1>Shopify returns and exchange apps: competitor low-star review audit</h1>
+    <p class="lead">This sample shows the shape of a paid audit. It uses public app pages, public low-star reviews, public pricing, Shopify community discussions, and Shopify help documentation.</p>
+
+    <div class="meta">
+      <div><strong>Snapshot date</strong><span>2026-06-04</span></div>
+      <div><strong>Competitors</strong><span>AfterShip, Loop, Return Prime, ReturnGO</span></div>
+      <div><strong>Substitute</strong><span>Shopify native returns and exchanges</span></div>
+      <div><strong>Boundary</strong><span>Public information only</span></div>
+    </div>
+
+    <section class="section" id="verdict">
+      <h2>One-page verdict</h2>
+      <div class="quote">This category is not closed, but I would not start by building another full returns platform.</div>
+      <p>AfterShip, Loop, Return Prime, and ReturnGO already cover returns portals, exchanges, labels, rules, reporting, and store credit. Their ratings are not weak. The useful signal is not “which app has more features”; it is where low-star reviews and community threads show repeated friction.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Wedge</th>
+              <th>Decision</th>
+              <th>Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pre-launch checklist for returns apps</td>
+              <td><span class="label">Proceed</span></td>
+              <td>Low-star reviews point to late discovery of plan limits, setup gaps, labels, and workflow restrictions.</td>
+            </tr>
+            <tr>
+              <td>Low-star review audit for a narrow App category</td>
+              <td><span class="label">Proceed</span></td>
+              <td>This sample itself is the first deliverable to validate.</td>
+            </tr>
+            <tr>
+              <td>Lightweight workflow for low-return-volume merchants</td>
+              <td><span class="label narrow">Narrow</span></td>
+              <td>The need is visible, but the buyer is price-sensitive.</td>
+            </tr>
+            <tr>
+              <td>Shopify Markets / multi-currency returns review</td>
+              <td><span class="label narrow">Narrow</span></td>
+              <td>Narrower, more complex, and potentially higher-value.</td>
+            </tr>
+            <tr>
+              <td>Another full returns platform</td>
+              <td><span class="label hold">Hold</span></td>
+              <td>The product and support surface is heavy for a first solo-company move.</td>
+            </tr>
+            <tr>
+              <td>Automatic refund or dispute handling</td>
+              <td><span class="label reject">Reject</span></td>
+              <td>This touches money movement, customer promises, disputes, and legal responsibility.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Competitor snapshot</h2>
+      <p>Numbers are a public-page snapshot, not a permanent ranking. The point is to identify repeated friction before choosing a wedge.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Public rating / reviews</th>
+              <th>Low-star review signal</th>
+              <th>What to inspect first</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AfterShip Returns & Exchanges</td>
+              <td>4.7, around 1,260 reviews</td>
+              <td>A visible pool of 1-star reviews</td>
+              <td>Plan boundaries, reporting, support, exchange flow</td>
+            </tr>
+            <tr>
+              <td>Loop Returns & Exchanges</td>
+              <td>4.7, 426 reviews</td>
+              <td>1-star reviews exist, but not enough to treat as overall quality ranking</td>
+              <td>Onboarding, sales process, pricing, support</td>
+            </tr>
+            <tr>
+              <td>Return Prime</td>
+              <td>4.8, 723 reviews</td>
+              <td>Lower visible 1-star count</td>
+              <td>Labels, billing, reliability, support</td>
+            </tr>
+            <tr>
+              <td>ReturnGO</td>
+              <td>4.9, 373 reviews</td>
+              <td>Lower visible 1-star count</td>
+              <td>Integrations, follow-up, label generation, platform compatibility</td>
+            </tr>
+            <tr>
+              <td>Shopify native returns and exchanges</td>
+              <td>Built-in platform capability</td>
+              <td>Not an app-store review target</td>
+              <td>Which baseline workflows are already covered by Shopify</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="complaints">
+      <h2>Complaint buckets worth watching</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Plan limits discovered late</h3>
+          <p>Some merchants appear to hit important feature limits after spending time configuring. That points to a decision and setup gap, not just a feature gap.</p>
+        </div>
+        <div class="card">
+          <h3>Setup and migration cost</h3>
+          <p>The pain is not always “the app cannot do it”. Sometimes it is “we only learned the workflow does not fit after setup work”.</p>
+        </div>
+        <div class="card">
+          <h3>Support and handoff</h3>
+          <p>Even mature SaaS products can lose trust when support is slow, unclear, or disconnected from sales promises.</p>
+        </div>
+        <div class="card">
+          <h3>Labels and carriers</h3>
+          <p>Return labels, carrier accounts, multi-item returns, and label consolidation look small until they turn into support tickets.</p>
+        </div>
+        <div class="card">
+          <h3>Exchange and store credit</h3>
+          <p>These are valuable because they retain revenue, but they are often tied to higher plans or more complex flows.</p>
+        </div>
+        <div class="card">
+          <h3>Reporting split</h3>
+          <p>Merchants may need returns, exchanges, refunds, store credit, and product-level return reasons separated clearly.</p>
+        </div>
+        <div class="card">
+          <h3>Low-volume price sensitivity</h3>
+          <p>A merchant with few returns may not want a $100+/month returns platform. A small checklist or setup review may fit better.</p>
+        </div>
+        <div class="card">
+          <h3>Markets and multi-currency</h3>
+          <p>Not every store has this pain, but stores that do may need a more careful compatibility review.</p>
+        </div>
+        <div class="card">
+          <h3>Native Shopify substitute</h3>
+          <p>Shopify already covers baseline returns and exchanges. Any new tool or service must justify what it adds beyond the native flow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What Shopify native features change</h2>
+      <p>Shopify documentation shows merchants can process returns and exchanges in admin, enable self-serve returns, and define return rules. That matters because “we help you handle returns” is too broad. A third-party App or service needs a sharper answer.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Sharper value questions</h3>
+          <ul>
+            <li>Can it reduce support tickets?</li>
+            <li>Can it turn refunds into exchanges or store credit?</li>
+            <li>Can it reduce label and carrier mistakes?</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Higher-friction setups</h3>
+          <ul>
+            <li>Multiple markets and currencies.</li>
+            <li>3PL, ERP, WMS, or carrier integration needs.</li>
+            <li>Separate reporting for returns and exchanges.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Pre-build warning</h3>
+          <p>If the only pitch is “another returns app”, the substitute risk is high. The wedge should be more specific.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="validation">
+      <h2>7-day validation action</h2>
+      <p>The goal is not to prove that the returns market is large. The goal is to test whether builders would pay for this kind of pre-build audit.</p>
+      <div class="quote">Question to ask: Would you pay $49-$99 for a competitor low-star review audit before building or repositioning a product?</div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Signal</th>
+              <th>Decision</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1 paid order</td>
+              <td><span class="label">Proceed</span></td>
+            </tr>
+            <tr>
+              <td>3 clear inquiries</td>
+              <td><span class="label">Proceed</span></td>
+            </tr>
+            <tr>
+              <td>5 target users ask for their own category or competitors</td>
+              <td><span class="label">Proceed</span></td>
+            </tr>
+            <tr>
+              <td>Only likes and saves, no questions</td>
+              <td><span class="label narrow">Narrow</span></td>
+            </tr>
+            <tr>
+              <td>Two sample markets with no inquiry</td>
+              <td><span class="label hold">Pause this product shape</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="actions">
+        <a class="button primary" href="index.html#contact">Ask for an audit</a>
+        <a class="button" href="index.html">Back to audit page</a>
+      </div>
+    </section>
+
+    <p class="footer">This sample is based on public information only. It does not use customer logins, private dashboards, order data, payment data, cookies, production tokens, refunds, disputes, or legal commitments.</p>
+  </main>
+</body>
+</html>
