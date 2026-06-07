@@ -15,6 +15,9 @@
 - `sample-report.zh-CN.md`
 - `feedback-log.zh-CN.md`
 - `reply-templates.zh-CN.md`
+- `robots.txt`
+- `sitemap.xml`
+- `llms.txt`
 - `.nojekyll`
 
 ## 推荐 repo 设置
@@ -23,8 +26,8 @@
 | --- | --- |
 | Repo 名 | `competitor-low-star-review-audit` |
 | 可见性 | Public |
-| Description | `A public sample of a competitor low-star review audit for indie builders.` |
-| Topics | `competitor-analysis`, `shopify`, `saas`, `indie-hackers`, `market-research` |
+| Description | `Public sample: competitor low-star review audit for Shopify returns apps.` |
+| Topics | `competitor-analysis`, `market-research`, `product-research`, `saas`, `shopify` |
 | Pages source | Deploy from branch |
 | Branch | `main` |
 | Folder | `/root` |
@@ -45,13 +48,13 @@
 
 | 检查项 | 结果 |
 | --- | --- |
-| 首页可打开 | 待填写 |
-| 样例报告页可打开 | 待填写 |
-| Ko-fi profile 链接可打开 | 待填写 |
-| GitHub 作品链接可打开 | 待填写 |
-| 移动端阅读不拥挤 | 待填写 |
-| 没有自动收款承诺 | 待填写 |
-| 没有登录客户账号、付款、退款或隐私承诺 | 待填写 |
+| 首页可打开 | 已验证，HTTP 200 |
+| 样例报告页可打开 | 已验证，HTTP 200 |
+| Ko-fi profile 链接可打开 | 已保留为询价入口，不作为自动收款承诺 |
+| GitHub 作品链接可打开 | 已验证当前 repo、GitHub Issue 和旧作品链接 |
+| 移动端阅读不拥挤 | 待人工视觉复核 |
+| 没有自动收款承诺 | 已检查 |
+| 没有登录客户账号、付款、退款或隐私承诺 | 已检查 |
 
 ## 发布后要更新的文件
 

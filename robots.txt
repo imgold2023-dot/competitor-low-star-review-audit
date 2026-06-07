@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://imgold2023-dot.github.io/competitor-low-star-review-audit/sitemap.xml

@@ -1,0 +1,25 @@
+# Competitor Low-Star Review Audit
+
+Public sample: https://imgold2023-dot.github.io/competitor-low-star-review-audit/
+
+Full sample report: https://imgold2023-dot.github.io/competitor-low-star-review-audit/sample-report.html
+
+This project is a public-information competitor low-star review audit for indie builders, SaaS founders, Shopify App developers, Chrome extension builders, and automation service providers.
+
+Current sample category: Shopify returns and exchange apps.
+
+Competitors covered:
+
+- AfterShip Returns
+- Loop Returns
+- Return Prime
+- ReturnGO
+- Shopify native returns and exchanges
+
+Core judgment:
+
+The Shopify returns category is not closed, but a small team should not start by building another full returns platform. More realistic wedges are app-selection reviews, low-volume merchant setup help, Markets / multi-currency checks, and clearer reporting across returns, exchanges, refunds, and store credit.
+
+Boundary:
+
+This audit uses public information only. It does not use customer logins, private dashboards, order data, payment data, cookies, production tokens, refunds, disputes, KYC, or legal commitments.
