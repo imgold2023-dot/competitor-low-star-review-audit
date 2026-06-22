@@ -1,6 +1,6 @@
 # Competitor Low-Star Review Audit
 
-A public validation page for a small research service:
+A public validation page for a small research format:
 
 > Read public competitor complaints before choosing a SaaS, App, plugin, or automation wedge.
 
@@ -37,21 +37,19 @@ It does not use customer logins, private dashboards, order data, payment data, c
 
 ## Validation Goal
 
-This is a 7-day validation asset. The goal is to test whether indie builders, SaaS founders, Shopify App developers, Chrome extension builders, or automation service providers would ask for a similar audit before building or repositioning a product.
+This is a public-feedback validation asset. The goal is to test whether indie builders, SaaS founders, Shopify App developers, Chrome extension builders, or automation service providers find this kind of competitor complaint review useful before building or repositioning a product.
 
 Success signals:
 
-- 1 paid order
-- 3 clear inquiries
+- 3 clear public comments from target users
 - 5 target users asking for their own category or competitors
+- specific objections about the format, evidence, or decision value
 
-## Inquiry
+## Public Feedback
 
-Send one product category or 3-5 public competitor links via:
+This page does not include checkout, automatic payment, or private account access.
 
-- Ko-fi profile: https://ko-fi.com/imgold
-
-If the category is too broad, too thin on public evidence, or too risky for a public-information audit, I will say so directly.
+The current ask is simple: read the sample and leave public feedback on whether this would help before building, buying, or repositioning a product. If you want to test the format, name one product category or 3-5 public competitor links in a public comment.
 
 ## Rights
 
