@@ -9,6 +9,8 @@
 - `index.html`：英文公开作品页，可直接浏览或发布。
 - `marketplace-safe.html`：平台安全作品页，用于 Upwork / Fiverr / Freelancer / Guru / PeoplePerHour / Contra 等平台，不包含站外联系、下单、付款或请求表单入口。
 - `marketplace-safe.zh-CN.md`：平台安全作品页简体中文说明。
+- `portfolio-section-demo.html`：响应式作品集 section demo，用于 Freelancer `Modern Responsive Portfolio Website` 这类小单的公开能力证明，不包含站外联系、下单、付款或请求表单入口。
+- `portfolio-section-demo.zh-CN.md`：响应式作品集 demo 简体中文说明。
 - `.github/ISSUE_TEMPLATE/service-request.yml`：公开服务请求表单，用于收集小范围任务线索。
 
 ## 当前定位
@@ -18,14 +20,16 @@
 - TypeScript / Node.js 小 bug 修复；
 - Playwright 自动化测试用例；
 - 公开竞品评论审计。
+- 响应式作品集 section / one-page starter。
 
 ## 使用方式
 
 1. 本地打开 `index.html` 检查展示。
 2. 收款和平台审核通过后，将页面发布到 GitHub Pages 或类似静态托管。
 3. 在自由职业平台资料中优先使用 `marketplace-safe.html`，避免把平台客户引到站外沟通或下单。
-4. 在独立公开渠道中可使用普通服务页 `index.html`。
-5. 若对方来自独立公开渠道且愿意公开描述需求，可让对方通过 GitHub issue 表单提交小范围请求。
+4. 针对作品集网站类任务，可在 proposal 中附加 `portfolio-section-demo.html` 作为更贴近任务的 proof。
+5. 在独立公开渠道中可使用普通服务页 `index.html`。
+6. 若对方来自独立公开渠道且愿意公开描述需求，可让对方通过 GitHub issue 表单提交小范围请求。
 
 ## 边界
 
