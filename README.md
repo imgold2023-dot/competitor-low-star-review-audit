@@ -24,6 +24,12 @@ I also keep a small service portfolio at `services/index.html` for focused deliv
 
 The service page is intentionally narrow: it describes concrete deliverables, public proof links, and boundaries around private accounts, payment data, KYC, production cookies, and customer data.
 
+Scoped requests can be opened through the public GitHub issue form:
+
+- https://github.com/imgold2023-dot/competitor-low-star-review-audit/issues/new?template=service-request.yml
+
+Requests should only include public or non-sensitive context.
+
 ## What The Sample Covers
 
 The sample looks at:

@@ -193,6 +193,36 @@
       white-space: nowrap;
     }
 
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: var(--paper);
+      color: var(--accent);
+    }
+
+    .button:hover {
+      filter: brightness(0.96);
+    }
+
     .proof-list {
       display: grid;
       gap: 12px;
@@ -257,6 +287,10 @@
         <span class="tag">QA Automation</span>
         <span class="tag">Product Research</span>
         <span class="tag">Markdown Reports</span>
+      </div>
+      <div class="cta-row" aria-label="Request actions">
+        <a class="button" href="https://github.com/imgold2023-dot/competitor-low-star-review-audit/issues/new?template=service-request.yml">Request a scoped quote</a>
+        <a class="button secondary" href="https://github.com/imgold2023-dot/competitor-low-star-review-audit/tree/main/services">View source and notes</a>
       </div>
       <div class="workbench" aria-label="Delivery workflow preview">
         <div class="workflow-panel">
@@ -330,6 +364,27 @@
           <h3>Safe data</h3>
           <p>No production secrets, private customer records, payment accounts, or platform-rule bypassing.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Request A Quote</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Send a narrow task</h3>
+          <p>Use the public request form for one small bug, one Playwright test, one documentation pass, or one public competitor-review audit.</p>
+        </article>
+        <article class="card">
+          <h3>Share safe context</h3>
+          <p>Public repo links, public pages, clear workflow steps, expected output, and a rough budget are enough for a first scope check.</p>
+        </article>
+        <article class="card">
+          <h3>Keep secrets out</h3>
+          <p>Do not post passwords, private keys, payment data, KYC details, customer records, production cookies, or private dashboard access.</p>
+        </article>
+      </div>
+      <div class="cta-row" aria-label="Request a quote">
+        <a class="button" href="https://github.com/imgold2023-dot/competitor-low-star-review-audit/issues/new?template=service-request.yml">Open a public service request</a>
       </div>
     </section>
 

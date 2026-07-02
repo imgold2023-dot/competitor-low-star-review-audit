@@ -31,6 +31,12 @@
 
 该页面只描述具体交付、公开证明链接和边界，不处理私有账号、支付数据、KYC、生产 cookie 或客户数据。
 
+公开服务请求入口：
+
+- `https://github.com/imgold2023-dot/competitor-low-star-review-audit/issues/new?template=service-request.yml`
+
+该入口只适合提交公开或非敏感需求描述，不应包含密码、私钥、生产 cookie、支付数据、KYC 信息、银行信息、客户记录或私有后台访问。
+
 ## 发布前必须确认
 
 创始人发布前需要确认：

@@ -1,0 +1,58 @@
+name: Scoped service request
+description: Request a small bug fix, Playwright test, documentation pass, or public review audit.
+title: "[Service request] "
+labels: ["service-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for opening a scoped request. Please only share public or non-sensitive information.
+
+        Do not include passwords, private keys, production cookies, payment data, KYC details, banking information, customer records, or private dashboard access.
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Request type
+      options:
+        - Small TypeScript / Node.js bug fix
+        - One Playwright regression test
+        - Public competitor-review audit
+        - Technical documentation / README pass
+        - Not sure yet
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Public context
+      description: Add a public repo link, public page, public competitor links, or a short non-sensitive description.
+      placeholder: "Example: public repo URL, failing test name, workflow steps, or 3-5 public competitor links."
+    validations:
+      required: true
+  - type: textarea
+    id: expected_output
+    attributes:
+      label: Expected output
+      description: What should be delivered if this is a good fit?
+      placeholder: "Example: focused patch + verification note, one Playwright test, or a Markdown audit report."
+    validations:
+      required: true
+  - type: dropdown
+    id: budget_range
+    attributes:
+      label: Budget range
+      options:
+        - USD 20-35
+        - USD 35-75
+        - USD 75-150
+        - USD 150+
+        - I need a scope suggestion first
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Safety boundary
+      options:
+        - label: I will not include secrets, private customer data, production credentials, payment data, KYC details, banking information, or private dashboard access in this public issue.
+          required: true
