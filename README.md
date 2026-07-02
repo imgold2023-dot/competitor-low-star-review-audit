@@ -10,8 +10,19 @@ This repository hosts a free sample audit for Shopify returns and exchange apps.
 
 - `index.html` - public audit landing page
 - `sample-report.html` - full sample report
+- `services/index.html` - practical software delivery portfolio page
 - `index.zh-CN.md` - Simplified Chinese companion copy for the landing page
 - `sample-report.zh-CN.md` - Simplified Chinese companion copy for the sample report
+
+## Services
+
+I also keep a small service portfolio at `services/index.html` for focused delivery work:
+
+- TypeScript / Node.js small bug fixes
+- Playwright regression tests
+- public competitor-review audits
+
+The service page is intentionally narrow: it describes concrete deliverables, public proof links, and boundaries around private accounts, payment data, KYC, production cookies, and customer data.
 
 ## What The Sample Covers
 

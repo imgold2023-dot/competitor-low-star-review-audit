@@ -4,8 +4,10 @@
 用途：第 5-6 天发布测试的静态公开入口。  
 公开页：`index.html`
 公开样例报告页：`sample-report.html`
+小型软件交付服务作品页：`services/index.html`
 中文伴随版本：`index.zh-CN.md`
 样例报告中文伴随版本：`sample-report.zh-CN.md`
+服务作品页中文说明：`services/README.zh-CN.md`
 发布清单：`github-pages-publish-checklist.zh-CN.md`
 
 ## 当前状态
@@ -18,6 +20,16 @@
 - 只使用公开信息。
 - 不登录客户账号，不处理订单、退款、隐私、支付、KYC 或争议。
 - 当前不展示价格包，不放 Ko-fi 付款入口。
+
+## 服务作品页
+
+`services/index.html` 用于展示可接单的小型交付服务：
+
+- TypeScript / Node.js 小 bug 修复；
+- Playwright 回归测试；
+- 公开竞品评论审计。
+
+该页面只描述具体交付、公开证明链接和边界，不处理私有账号、支付数据、KYC、生产 cookie 或客户数据。
 
 ## 发布前必须确认
 

@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Practical Software Delivery</title>
+  <style>
+    :root {
+      --ink: #1f2933;
+      --muted: #5f6f7c;
+      --line: #d9e2ec;
+      --paper: #ffffff;
+      --wash: #f4f7fb;
+      --accent: #0f766e;
+      --accent-soft: #d9f3ee;
+      --code: #243b53;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--wash);
+      line-height: 1.55;
+    }
+
+    main {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 48px 20px 64px;
+    }
+
+    header {
+      padding: 24px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      max-width: 820px;
+      font-size: 40px;
+      line-height: 1.12;
+      font-weight: 750;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin: 0;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .workbench {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 28px;
+    }
+
+    .workflow-panel,
+    .terminal-panel {
+      min-height: 260px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .workflow-panel {
+      display: grid;
+      gap: 12px;
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .flow-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      color: #115e59;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .flow-step strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .flow-step span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .terminal-panel {
+      background: #102a43;
+      color: #d9e2ec;
+      font-family: Consolas, "Courier New", monospace;
+      overflow: hidden;
+    }
+
+    .terminal-dot-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #9fb3c8;
+    }
+
+    .terminal-line {
+      margin: 0 0 10px;
+      color: #bcccdc;
+      font-size: 14px;
+      white-space: normal;
+    }
+
+    .terminal-line strong {
+      color: #7dd3fc;
+      font-weight: 700;
+    }
+
+    .section h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    .card p,
+    li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #115e59;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .proof-list a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .proof-list a:hover {
+      text-decoration: underline;
+    }
+
+    .note {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent);
+      background: var(--paper);
+      color: var(--code);
+      border-radius: 4px;
+    }
+
+    footer {
+      padding-top: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      main {
+        padding-top: 28px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .workbench {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Practical software delivery for small teams</h1>
+      <p class="lead">Focused TypeScript fixes, Playwright regression tests, and public competitor-review audits. Narrow scope, written verification, no private account access.</p>
+      <div class="tag-row" aria-label="Skills">
+        <span class="tag">TypeScript</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Playwright</span>
+        <span class="tag">QA Automation</span>
+        <span class="tag">Product Research</span>
+        <span class="tag">Markdown Reports</span>
+      </div>
+      <div class="workbench" aria-label="Delivery workflow preview">
+        <div class="workflow-panel">
+          <div class="flow-step">
+            <div class="flow-number">1</div>
+            <div><strong>Reproduce</strong><span>Start from a failing case, clear workflow, or public review source.</span></div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-number">2</div>
+            <div><strong>Deliver</strong><span>Make the smallest useful patch, test, or decision report.</span></div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-number">3</div>
+            <div><strong>Verify</strong><span>Attach commands, evidence links, and a short delivery note.</span></div>
+          </div>
+        </div>
+        <div class="terminal-panel" aria-label="Example delivery note">
+          <div class="terminal-dot-row" aria-hidden="true">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+          </div>
+          <p class="terminal-line"><strong>scope</strong>: one small bug or workflow</p>
+          <p class="terminal-line"><strong>output</strong>: patch / Playwright test / Markdown report</p>
+          <p class="terminal-line"><strong>verification</strong>: test command + changed files + notes</p>
+          <p class="terminal-line"><strong>boundary</strong>: no private credentials or payment data</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Services</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Small Bug Fix</h3>
+          <p>One reproducible TypeScript or Node.js issue, a focused patch, and a short note covering root cause, changed files, and verification commands.</p>
+        </article>
+        <article class="card">
+          <h3>Playwright Test</h3>
+          <p>One existing web workflow turned into a regression test with stable assertions, run instructions, and debugging notes.</p>
+        </article>
+        <article class="card">
+          <h3>Competitor Review Audit</h3>
+          <p>Public competitor reviews summarized into repeated complaints, unmet needs, price/package observations, and a Proceed / Narrow / Hold / Reject recommendation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Proof</h2>
+      <ul class="proof-list">
+        <li><a href="https://github.com/claude-builders-bounty/claude-builders-bounty/pull/3151">Claude Code safety hook PR</a> - pre-tool Bash guard, tests, and setup documentation.</li>
+        <li><a href="https://github.com/moorcheh-ai/memanto/pull/1326">TypeScript lifecycle bug fix PR</a> - focused lifecycle fix with regression coverage.</li>
+        <li><a href="../sample-report.html">Shopify returns review audit sample</a> - public competitor-review analysis and decision report.</li>
+      </ul>
+      <p class="note">I work with public repositories, test environments, dummy data, or minimal reproductions. I do not handle payment credentials, private keys, production cookies, KYC details, banking information, or customer data.</p>
+    </section>
+
+    <section class="section">
+      <h2>Good Fit</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Clear input</h3>
+          <p>A repo link, failing test, reproduction steps, or a specific product category.</p>
+        </article>
+        <article class="card">
+          <h3>Small scope</h3>
+          <p>A task that can be delivered as one patch, one test, or one concise report.</p>
+        </article>
+        <article class="card">
+          <h3>Safe data</h3>
+          <p>No production secrets, private customer records, payment accounts, or platform-rule bypassing.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p>Available for focused software delivery and public research tasks. Typical first-task range: USD 35-99 depending on scope.</p>
+    </footer>
+  </main>
+</body>
+</html>
