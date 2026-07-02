@@ -68,6 +68,12 @@ This page does not include checkout, automatic payment, or private account acces
 
 The current ask is simple: read the sample and leave public feedback on whether this would help before building, buying, or repositioning a product. If you want to test the format, name one product category or 3-5 public competitor links in a public comment.
 
+If you have a small scoped task, use the public service request form:
+
+- https://github.com/imgold2023-dot/competitor-low-star-review-audit/issues/new?template=service-request.yml
+
+Only include public or non-sensitive context.
+
 ## Rights
 
 This repository is public for validation and review. Unless a separate license is added later, the written report, page copy, and design are not granted for reuse.
