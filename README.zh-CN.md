@@ -5,9 +5,11 @@
 公开页：`index.html`
 公开样例报告页：`sample-report.html`
 小型软件交付服务作品页：`services/index.html`
+平台安全作品页：`services/marketplace-safe.html`
 中文伴随版本：`index.zh-CN.md`
 样例报告中文伴随版本：`sample-report.zh-CN.md`
 服务作品页中文说明：`services/README.zh-CN.md`
+平台安全作品页中文说明：`services/marketplace-safe.zh-CN.md`
 发布清单：`github-pages-publish-checklist.zh-CN.md`
 
 ## 当前状态
@@ -38,6 +40,17 @@
 该入口只适合提交公开或非敏感需求描述，不应包含密码、私钥、生产 cookie、支付数据、KYC 信息、银行信息、客户记录或私有后台访问。
 
 首页和样例报告页也已加入该请求入口，避免访问者只看到样例但不知道如何提交一个小范围需求。
+
+## 平台安全作品页
+
+`services/marketplace-safe.html` 用于自由职业平台资料或 proposal。
+
+该页面只作为 portfolio proof，不包含站外联系方式、站外下单、站外付款或服务请求表单。若客户来自 Upwork、Fiverr、Freelancer、Guru、PeoplePerHour、Contra 等平台，沟通、范围确认、订单、交付和付款都应留在对应平台内。
+
+收入冲刺中：
+
+- 平台投递默认使用 `services/marketplace-safe.html`。
+- 独立公开渠道才使用 `services/index.html` 和 GitHub issue 服务请求表单。
 
 ## 发布前必须确认
 
