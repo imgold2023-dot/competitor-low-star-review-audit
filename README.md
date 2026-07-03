@@ -13,10 +13,12 @@ This repository hosts a free sample audit for Shopify returns and exchange apps.
 - `services/index.html` - practical software delivery portfolio page
 - `services/marketplace-safe.html` - marketplace-safe portfolio page without off-platform contact, payment, order, or request-form links
 - `services/saas-qa-diagnostic-sample.html` - SaaS QA diagnostic sample for product QA, AI app builder QA, and release-readiness paid trials
+- `services/uat-accessibility-demo.html` - UAT, accessibility, and pre-launch QA first-pass sample
 - `index.zh-CN.md` - Simplified Chinese companion copy for the landing page
 - `sample-report.zh-CN.md` - Simplified Chinese companion copy for the sample report
 - `services/marketplace-safe.zh-CN.md` - Simplified Chinese companion notes for the marketplace-safe page
 - `services/saas-qa-diagnostic-sample.zh-CN.md` - Simplified Chinese companion notes for the SaaS QA diagnostic sample
+- `services/uat-accessibility-demo.zh-CN.md` - Simplified Chinese companion notes for the UAT and accessibility sample
 
 ## Services
 
@@ -26,6 +28,7 @@ I also keep a small service portfolio at `services/index.html` for focused deliv
 - Playwright regression tests
 - public competitor-review audits
 - SaaS / AI product QA diagnostics
+- UAT / accessibility / pre-launch QA first passes
 
 The service page is intentionally narrow: it describes concrete deliverables, public proof links, and boundaries around private accounts, payment data, KYC, production cookies, and customer data.
 

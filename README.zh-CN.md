@@ -7,11 +7,13 @@
 小型软件交付服务作品页：`services/index.html`
 平台安全作品页：`services/marketplace-safe.html`
 SaaS QA Diagnostic 样例页：`services/saas-qa-diagnostic-sample.html`
+UAT 与 Accessibility First Pass 样例页：`services/uat-accessibility-demo.html`
 中文伴随版本：`index.zh-CN.md`
 样例报告中文伴随版本：`sample-report.zh-CN.md`
 服务作品页中文说明：`services/README.zh-CN.md`
 平台安全作品页中文说明：`services/marketplace-safe.zh-CN.md`
 SaaS QA Diagnostic 样例页中文说明：`services/saas-qa-diagnostic-sample.zh-CN.md`
+UAT 与 Accessibility First Pass 样例页中文说明：`services/uat-accessibility-demo.zh-CN.md`
 发布清单：`github-pages-publish-checklist.zh-CN.md`
 
 ## 当前状态
@@ -33,6 +35,7 @@ SaaS QA Diagnostic 样例页中文说明：`services/saas-qa-diagnostic-sample.z
 - Playwright 回归测试；
 - 公开竞品评论审计；
 - SaaS / AI 产品 QA diagnostic。
+- UAT / accessibility / pre-launch QA first pass。
 
 该页面只描述具体交付、公开证明链接和边界，不处理私有账号、支付数据、KYC、生产 cookie 或客户数据。
 

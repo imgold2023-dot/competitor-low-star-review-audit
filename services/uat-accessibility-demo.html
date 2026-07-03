@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UAT and Accessibility First Pass Sample</title>
+  <style>
+    :root {
+      --ink: #1f2933;
+      --muted: #617283;
+      --line: #d8e0e8;
+      --paper: #ffffff;
+      --wash: #f6f8fb;
+      --soft: #eef7f4;
+      --accent: #116b5f;
+      --warn: #8a5a10;
+      --bad: #a33232;
+      --code: #26384a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--wash);
+      line-height: 1.55;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 44px 20px 64px;
+    }
+
+    header {
+      padding: 24px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      max-width: 850px;
+      font-size: 38px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 820px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      min-height: 30px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    section {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card,
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .panel {
+      margin-top: 14px;
+    }
+
+    .card p,
+    li,
+    td {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      display: table;
+    }
+
+    th,
+    td {
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      padding: 11px 12px;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--ink);
+      font-size: 13px;
+      background: #edf3f8;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .status-pass { color: var(--accent); font-weight: 700; }
+    .status-risk { color: var(--warn); font-weight: 700; }
+    .status-fail { color: var(--bad); font-weight: 700; }
+
+    .note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    code {
+      color: var(--code);
+      background: #eef2f6;
+      border-radius: 4px;
+      padding: 2px 4px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 12px;
+    }
+
+    @media (max-width: 760px) {
+      main { padding: 30px 14px 44px; }
+      h1 { font-size: 30px; }
+      .grid { grid-template-columns: 1fr; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>UAT and accessibility first pass sample</h1>
+      <p class="lead">A compact example of how I would report a paid UAT, accessibility, or pre-launch website QA pass. The point is not a long test plan. It is a short decision-ready report a product team can act on.</p>
+      <div class="tags">
+        <span class="tag">UAT pass/fail matrix</span>
+        <span class="tag">Accessibility blockers</span>
+        <span class="tag">Pre-launch QA</span>
+        <span class="tag">Developer-ready issue notes</span>
+        <span class="tag">Sandbox / test data only</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Example scope</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Product area</h3>
+          <p>One onboarding or checkout-adjacent workflow in a SaaS, marketplace, mobile app, or marketing website.</p>
+        </article>
+        <article class="card">
+          <h3>Time box</h3>
+          <p>2-5 hours. Enough to find real blockers, not enough to pretend the whole product is certified.</p>
+        </article>
+        <article class="card">
+          <h3>Output</h3>
+          <p>Pass/fail matrix, confirmed issues, unclear requirements, launch risks, and a short next-pass checklist.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>UAT pass/fail matrix</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Status</th>
+            <th>Evidence note</th>
+            <th>Next action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Account setup</td>
+            <td class="status-pass">Pass</td>
+            <td>Test user can complete the basic setup flow with dummy data.</td>
+            <td>Keep this in the smoke checklist.</td>
+          </tr>
+          <tr>
+            <td>Required field validation</td>
+            <td class="status-fail">Fail</td>
+            <td>Empty state message appears after submit, but focus stays on the button instead of the first invalid field.</td>
+            <td>Move focus to the first invalid field and expose the error to assistive tech.</td>
+          </tr>
+          <tr>
+            <td>Mobile layout</td>
+            <td class="status-risk">Risk</td>
+            <td>Primary action stays visible, but the secondary legal text wraps under the sticky footer on narrow screens.</td>
+            <td>Retest at 360px and 390px after layout adjustment.</td>
+          </tr>
+          <tr>
+            <td>Confirmation page</td>
+            <td class="status-pass">Pass</td>
+            <td>Confirmation ID, timestamp, and next-step copy are present in the test environment.</td>
+            <td>Add this page to regression coverage.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">This sample uses invented data. It is only a format example.</p>
+    </section>
+
+    <section>
+      <h2>Accessibility issue examples</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Severity</th>
+            <th>Issue</th>
+            <th>Why it matters</th>
+            <th>Suggested fix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="status-fail">High</td>
+            <td>Icon-only action has no accessible name.</td>
+            <td>Screen-reader users hear a generic button instead of the action.</td>
+            <td>Add an accessible label that matches the visible intent.</td>
+          </tr>
+          <tr>
+            <td class="status-risk">Medium</td>
+            <td>Error text is visually clear but not programmatically tied to the field.</td>
+            <td>Users may miss the reason a form cannot proceed.</td>
+            <td>Associate the field and error text, then retest keyboard flow.</td>
+          </tr>
+          <tr>
+            <td class="status-risk">Medium</td>
+            <td>Focus order jumps from the plan selector to the footer link.</td>
+            <td>Keyboard users can skip the confirmation action by accident.</td>
+            <td>Review DOM order and custom focus handling.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Pre-launch checklist</h2>
+      <div class="panel">
+        <ul>
+          <li>Confirm one happy path and two edge paths before starting.</li>
+          <li>Use staging, sandbox, dummy data, or test accounts only.</li>
+          <li>Separate confirmed bugs from unclear requirements.</li>
+          <li>Rank issues by release impact, not by how long the report looks.</li>
+          <li>Leave the team with a small regression checklist for the next build.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Boundary</h2>
+      <div class="panel">
+        <p>I do not need production secrets, real payment data, KYC data, bank data, wallet credentials, production cookies, private customer records, owner-dashboard access, or any off-platform payment method.</p>
+        <p class="note">For marketplace clients, all communication, milestones, delivery, and payment should stay on the marketplace platform.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
