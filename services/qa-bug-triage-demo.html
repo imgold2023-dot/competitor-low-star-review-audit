@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QA Bug Triage Sample</title>
+  <style>
+    :root {
+      --ink: #18212f;
+      --muted: #607083;
+      --line: #d8e0ea;
+      --paper: #ffffff;
+      --wash: #f5f7fb;
+      --accent: #0f766e;
+      --accent-soft: #d9f3ee;
+      --warn: #92400e;
+      --warn-soft: #fef3c7;
+      --bad: #b42318;
+      --bad-soft: #fee4e2;
+      --blue: #075985;
+      --blue-soft: #e0f2fe;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--wash);
+      line-height: 1.55;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 42px 20px 68px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(280px, 0.88fr);
+      gap: 28px;
+      align-items: end;
+      padding: 18px 0 34px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 800px;
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .brief,
+    .panel,
+    .table-wrap,
+    .note {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .brief {
+      padding: 18px;
+    }
+
+    .brief strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .brief p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    section {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .panel {
+      padding: 18px;
+    }
+
+    .panel p,
+    li,
+    td {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #115e59;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .tag.warn {
+      background: var(--warn-soft);
+      color: var(--warn);
+    }
+
+    .tag.bad {
+      background: var(--bad-soft);
+      color: var(--bad);
+    }
+
+    .tag.blue {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      min-width: 780px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--ink);
+      font-size: 14px;
+      background: #edf2f7;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .note {
+      padding: 16px 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .note strong {
+      color: var(--ink);
+    }
+
+    code {
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #eef3f8;
+      color: #243b53;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      header,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .brief,
+      .panel,
+      .note {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">QA Bug Triage Sample</p>
+        <h1>A small QA pass for SaaS, chatbot, and web app releases.</h1>
+        <p class="intro">This sample shows the shape of a 2-4 hour paid trial: reproduce risky flows, rank bugs, write usable evidence, and leave a short regression checklist.</p>
+        <div class="tag-row" aria-label="Scope tags">
+          <span class="tag">Manual QA</span>
+          <span class="tag">Bug Triage</span>
+          <span class="tag blue">Playwright-ready</span>
+          <span class="tag warn">Staging only</span>
+        </div>
+      </div>
+      <aside class="brief">
+        <strong>Marketplace-safe note</strong>
+        <p>If you found this through a freelance marketplace, keep messages, files, order creation, and payment inside that marketplace. This page is only a public work sample.</p>
+      </aside>
+    </header>
+
+    <section>
+      <h2>What I need</h2>
+      <div class="grid">
+        <article class="panel">
+          <h3>Safe test access</h3>
+          <p>A staging URL, test account, dummy data, local setup, or clear screenshots. No production passwords or private customer records.</p>
+        </article>
+        <article class="panel">
+          <h3>One narrow slice</h3>
+          <p>Examples: signup to first action, chatbot answer quality, role permissions, checkout in test mode, or one release-critical workflow.</p>
+        </article>
+        <article class="panel">
+          <h3>Expected result</h3>
+          <p>A short note on what should happen, what must not happen, and which browser/device matters most for the first pass.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Sample bug table</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Severity</th>
+              <th>Area</th>
+              <th>Finding</th>
+              <th>Evidence to attach</th>
+              <th>Next action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag bad">High</span></td>
+              <td>Chatbot reset</td>
+              <td>After clearing a conversation, the assistant still uses stale project context in the next answer.</td>
+              <td>Prompt transcript, browser console timestamp, expected vs actual answer.</td>
+              <td>Retest context reset and add a regression prompt set.</td>
+            </tr>
+            <tr>
+              <td><span class="tag bad">High</span></td>
+              <td>Role permissions</td>
+              <td>A viewer role can open a disabled admin action through direct navigation.</td>
+              <td>Role name, route, request/response status, screenshot of blocked UI vs allowed route.</td>
+              <td>Block server-side, then add role matrix checks.</td>
+            </tr>
+            <tr>
+              <td><span class="tag warn">Medium</span></td>
+              <td>Mobile layout</td>
+              <td>The primary action overlaps the empty state on narrow screens after a failed search.</td>
+              <td>Viewport size, screenshot, reproduction steps, affected browser.</td>
+              <td>Fix responsive spacing and add a narrow-width visual check.</td>
+            </tr>
+            <tr>
+              <td><span class="tag warn">Medium</span></td>
+              <td>API validation</td>
+              <td>The form shows success after the API returns a validation error payload with HTTP 200.</td>
+              <td>Network response body, form state before submit, expected error copy.</td>
+              <td>Treat semantic validation errors as failed submissions.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Delivery shape</h2>
+      <div class="grid">
+        <article class="panel">
+          <h3>Bug report</h3>
+          <p>A ranked table with steps, actual result, expected result, evidence, likely user impact, and suggested next action.</p>
+        </article>
+        <article class="panel">
+          <h3>Coverage notes</h3>
+          <p>What was tested, what was skipped, which assumptions were made, and where risk remains after the first pass.</p>
+        </article>
+        <article class="panel">
+          <h3>Regression checklist</h3>
+          <p>A short list the team can rerun manually or turn into Playwright tests later.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Boundaries</h2>
+      <div class="note">
+        <strong>Not included:</strong> production secrets, real payment flows, KYC, banking, wallets, private customer data, production cookies, private dashboard scraping, bypassing platform rules, or off-platform payment handling. Payment-like flows are test mode, sandbox, or mocked only.
+      </div>
+    </section>
+
+    <section>
+      <h2>First paid slice</h2>
+      <div class="grid">
+        <article class="panel">
+          <h3>2 hours</h3>
+          <p>One critical path, 3-6 documented findings if found, and a short coverage note.</p>
+        </article>
+        <article class="panel">
+          <h3>4 hours</h3>
+          <p>Two to three linked flows, ranked bugs, regression checklist, and one automation-ready test outline.</p>
+        </article>
+        <article class="panel">
+          <h3>After that</h3>
+          <p>If the first slice is useful, expand into Playwright regression tests or a release-readiness checklist.</p>
+        </article>
+      </div>
+    </section>
+
+    <p class="note">This page contains no order form, payment link, tracking script, or off-platform contact route.</p>
+  </main>
+</body>
+</html>
