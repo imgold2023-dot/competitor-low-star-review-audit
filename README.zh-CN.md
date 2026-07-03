@@ -6,10 +6,12 @@
 公开样例报告页：`sample-report.html`
 小型软件交付服务作品页：`services/index.html`
 平台安全作品页：`services/marketplace-safe.html`
+SaaS QA Diagnostic 样例页：`services/saas-qa-diagnostic-sample.html`
 中文伴随版本：`index.zh-CN.md`
 样例报告中文伴随版本：`sample-report.zh-CN.md`
 服务作品页中文说明：`services/README.zh-CN.md`
 平台安全作品页中文说明：`services/marketplace-safe.zh-CN.md`
+SaaS QA Diagnostic 样例页中文说明：`services/saas-qa-diagnostic-sample.zh-CN.md`
 发布清单：`github-pages-publish-checklist.zh-CN.md`
 
 ## 当前状态
@@ -29,7 +31,8 @@
 
 - TypeScript / Node.js 小 bug 修复；
 - Playwright 回归测试；
-- 公开竞品评论审计。
+- 公开竞品评论审计；
+- SaaS / AI 产品 QA diagnostic。
 
 该页面只描述具体交付、公开证明链接和边界，不处理私有账号、支付数据、KYC、生产 cookie 或客户数据。
 

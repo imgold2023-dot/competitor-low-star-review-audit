@@ -13,6 +13,8 @@
 - `portfolio-section-demo.zh-CN.md`：响应式作品集 demo 简体中文说明。
 - `qa-bug-triage-demo.html`：QA / bug triage paid trial 样例页，用于 Upwork QA、Playwright、AI 产品测试、release readiness 类任务的公开能力证明，不包含站外联系、下单、付款或请求表单入口。
 - `qa-bug-triage-demo.zh-CN.md`：QA Bug Triage 样例页简体中文说明。
+- `saas-qa-diagnostic-sample.html`：SaaS / AI 产品 QA diagnostic 样例页，用于 Upwork SaaS QA、AI app builder QA、AI platform tester、release-readiness 类任务的公开能力证明，不包含站外联系、下单、付款或请求表单入口。
+- `saas-qa-diagnostic-sample.zh-CN.md`：SaaS QA Diagnostic 样例页简体中文说明。
 - `.github/ISSUE_TEMPLATE/service-request.yml`：公开服务请求表单，用于收集小范围任务线索。
 
 ## 当前定位
@@ -24,6 +26,7 @@
 - 公开竞品评论审计。
 - 响应式作品集 section / one-page starter。
 - QA bug triage / release-readiness 小范围 paid trial。
+- SaaS / AI 产品 QA diagnostic 小范围 paid trial。
 
 ## 使用方式
 
@@ -32,8 +35,9 @@
 3. 在自由职业平台资料中优先使用 `marketplace-safe.html`，避免把平台客户引到站外沟通或下单。
 4. 针对作品集网站类任务，可在 proposal 中附加 `portfolio-section-demo.html` 作为更贴近任务的 proof。
 5. 针对 QA、Playwright、AI 产品测试、release-readiness 类任务，可在 proposal 中附加 `qa-bug-triage-demo.html` 作为更贴近任务的 proof。
-6. 在独立公开渠道中可使用普通服务页 `index.html`。
-7. 若对方来自独立公开渠道且愿意公开描述需求，可让对方通过 GitHub issue 表单提交小范围请求。
+6. 针对 SaaS QA、AI app builder QA、AI platform tester、B2B workflow QA 类任务，可在 proposal 中附加 `saas-qa-diagnostic-sample.html` 作为更贴近任务的 proof。
+7. 在独立公开渠道中可使用普通服务页 `index.html`。
+8. 若对方来自独立公开渠道且愿意公开描述需求，可让对方通过 GitHub issue 表单提交小范围请求。
 
 ## 边界
 

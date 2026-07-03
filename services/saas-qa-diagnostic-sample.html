@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SaaS QA Diagnostic Sample</title>
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #607083;
+      --line: #d9e2ec;
+      --paper: #ffffff;
+      --wash: #f5f7fb;
+      --accent: #0f766e;
+      --accent-soft: #d9f3ee;
+      --warn: #92400e;
+      --warn-soft: #fef3c7;
+      --bad: #b42318;
+      --bad-soft: #fee4e2;
+      --blue: #075985;
+      --blue-soft: #e0f2fe;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--wash);
+      line-height: 1.55;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 42px 20px 68px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(280px, 0.88fr);
+      gap: 28px;
+      align-items: end;
+      padding: 18px 0 34px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .brief,
+    .panel,
+    .table-wrap,
+    .note {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .brief {
+      padding: 18px;
+    }
+
+    .brief strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .brief p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    section {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .panel {
+      padding: 18px;
+    }
+
+    .panel p,
+    li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #115e59;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    th {
+      background: #eef3f8;
+      color: #243b53;
+      font-weight: 700;
+    }
+
+    td {
+      background: var(--paper);
+    }
+
+    .severity {
+      display: inline-block;
+      min-width: 74px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .high {
+      background: var(--bad-soft);
+      color: var(--bad);
+    }
+
+    .medium {
+      background: var(--warn-soft);
+      color: var(--warn);
+    }
+
+    .low {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .note {
+      padding: 16px 18px;
+      color: var(--muted);
+    }
+
+    .note strong {
+      color: var(--ink);
+    }
+
+    .mono {
+      font-family: Consolas, "Courier New", monospace;
+      color: #243b53;
+      font-size: 14px;
+    }
+
+    footer {
+      padding-top: 26px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 780px) {
+      main {
+        padding-top: 28px;
+      }
+
+      header,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">SaaS QA Diagnostic Sample</p>
+        <h1>Two-hour product QA pass for a small SaaS release</h1>
+        <p class="intro">This sample shows the shape of a short paid diagnostic: one flow, ranked issues, evidence notes, and a regression checklist the team can act on.</p>
+        <div class="tag-row" aria-label="Scope tags">
+          <span class="tag">B2B SaaS</span>
+          <span class="tag">AI Product QA</span>
+          <span class="tag">Release Readiness</span>
+          <span class="tag">Bug Triage</span>
+          <span class="tag">Regression Checklist</span>
+        </div>
+      </div>
+      <aside class="brief" aria-label="Diagnostic brief">
+        <strong>Sample brief</strong>
+        <p>Test a staging-only workspace invite flow before launch. Use dummy users. Flag bugs, unclear requirements, and follow-up checks. Do not access production data.</p>
+      </aside>
+    </header>
+
+    <section>
+      <h2>Diagnostic Output</h2>
+      <div class="grid">
+        <article class="panel">
+          <h3>1. Flow Map</h3>
+          <p>Admin invites a teammate, teammate accepts the invite, workspace permissions are applied, and billing-sensitive areas stay hidden from non-admin users.</p>
+        </article>
+        <article class="panel">
+          <h3>2. Risk Focus</h3>
+          <p>Permissions, expired links, duplicate invites, email mismatch, empty states, loading states, and recovery after failed acceptance.</p>
+        </article>
+        <article class="panel">
+          <h3>3. Delivery Note</h3>
+          <p>Seven checks run, three issues found, one requirement question raised, and five regression checks recommended for the next build.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Issue Table</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Severity</th>
+              <th>Finding</th>
+              <th>Evidence</th>
+              <th>Suggested Fix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="severity high">High</span></td>
+              <td>Accepted invite keeps the user in viewer mode until the page is refreshed.</td>
+              <td class="mono">Chrome 125, staging, invite-accept flow, workspace role badge remains "Viewer" after success toast.</td>
+              <td>Refresh local role state after invite acceptance or re-fetch the membership object before redirect.</td>
+            </tr>
+            <tr>
+              <td><span class="severity medium">Medium</span></td>
+              <td>Expired invite link shows a generic 500-style error instead of a recovery path.</td>
+              <td class="mono">Expired token route returns "Something went wrong" with no resend action.</td>
+              <td>Return a specific expired-link state with a "request new invite" path and support copy.</td>
+            </tr>
+            <tr>
+              <td><span class="severity medium">Medium</span></td>
+              <td>Duplicate invite creates two pending rows for the same email.</td>
+              <td class="mono">Admin invites qa+2@example.test twice. Pending table shows two active rows.</td>
+              <td>De-duplicate pending invites by workspace and normalized email; surface the existing invite timestamp.</td>
+            </tr>
+            <tr>
+              <td><span class="severity low">Low</span></td>
+              <td>Empty state copy says "No members" while the current admin is visible in the table.</td>
+              <td class="mono">Members tab, new workspace, admin account only.</td>
+              <td>Change empty state to "No teammates invited yet" or hide it when one member exists.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Regression Checklist</h2>
+      <div class="grid">
+        <article class="panel">
+          <h3>Permission Checks</h3>
+          <ul>
+            <li>Admin can invite a member.</li>
+            <li>Viewer cannot open billing settings.</li>
+            <li>Role badge updates immediately after invite acceptance.</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>Invite Edge Cases</h3>
+          <ul>
+            <li>Expired token shows a recoverable state.</li>
+            <li>Duplicate invite does not create duplicate pending rows.</li>
+            <li>Email mismatch blocks acceptance with clear copy.</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>Release Notes</h3>
+          <ul>
+            <li>Keep this flow in the pre-release smoke list.</li>
+            <li>Add one API or Playwright check after the state refresh bug is fixed.</li>
+            <li>Retest permissions before opening the next beta group.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Boundary</h2>
+      <p class="note"><strong>This page contains no order form, contact form, payment link, tracker, or login.</strong> It is a portfolio sample only. Real work should use the hiring platform's normal proposal, milestone, messaging, and escrow flow. Test data, staging access, public repositories, or minimal reproductions are enough for a first diagnostic. Production credentials, private keys, production cookies, banking information, identity documents, and real customer records are out of scope.</p>
+    </section>
+
+    <footer>
+      <p>Sample artifact for scoped SaaS QA, AI product QA, and release-readiness paid trials.</p>
+    </footer>
+  </main>
+</body>
+</html>
