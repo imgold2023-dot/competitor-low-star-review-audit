@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QA Paid Trial Proof</title>
+  <style>
+    :root {
+      --ink: #1f2933;
+      --muted: #5f6f7c;
+      --line: #d9e2ec;
+      --paper: #ffffff;
+      --wash: #f4f7fb;
+      --accent: #0f766e;
+      --accent-soft: #d9f3ee;
+      --code: #243b53;
+      --warn: #7c2d12;
+      --warn-soft: #ffedd5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--wash);
+      line-height: 1.55;
+    }
+
+    main {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 46px 20px 64px;
+    }
+
+    header {
+      padding: 24px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      max-width: 840px;
+      font-size: 38px;
+      line-height: 1.12;
+      font-weight: 750;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    p,
+    li,
+    td,
+    th {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin: 0;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .notice {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border: 1px solid #b7c4d1;
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .notice strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .section {
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 14px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .proof-list li {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      color: var(--ink);
+      background: #edf2f7;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #115e59;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .warning {
+      margin-top: 18px;
+      padding: 15px 17px;
+      border: 1px solid #fed7aa;
+      border-radius: 8px;
+      background: var(--warn-soft);
+      color: var(--warn);
+    }
+
+    footer {
+      padding-top: 26px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 860px) {
+      h1 {
+        font-size: 31px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      th {
+        display: none;
+      }
+
+      td {
+        border-bottom: 0;
+        padding: 12px 16px;
+      }
+
+      tr {
+        border-bottom: 1px solid var(--line);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>QA paid trial proof for small product teams</h1>
+      <p class="lead">A practical first milestone for SaaS, web app, AI product, and mobile product QA: two hours, one high-risk flow, issue table, repro notes, and a short release-risk summary.</p>
+      <div class="notice">
+        <strong>Marketplace-safe note</strong>
+        <p>If you found this through a freelance marketplace, keep all discussion, files, order creation, milestone approval, delivery, and payment inside that marketplace. This page is portfolio proof only. It has no off-platform contact, payment, order, or request-form link.</p>
+      </div>
+      <div class="tag-row" aria-label="Service tags">
+        <span class="tag">Manual QA</span>
+        <span class="tag">Bug triage</span>
+        <span class="tag">UAT</span>
+        <span class="tag">Release readiness</span>
+        <span class="tag">SaaS QA</span>
+        <span class="tag">Staging and dummy data</span>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>What a first paid trial includes</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Scope</h3>
+          <p>One flow, one feature area, or one bug cluster. Good examples: signup, checkout sandbox, onboarding, settings, upload, search, chatbot, or mobile first-run.</p>
+        </article>
+        <article class="card">
+          <h3>Evidence</h3>
+          <p>Short repro notes, expected versus actual behavior, severity, environment, and screenshots or public links where appropriate.</p>
+        </article>
+        <article class="card">
+          <h3>Output</h3>
+          <p>A compact issue table, risk summary, recommended fixes, and a regression checklist that the team can act on immediately.</p>
+        </article>
+        <article class="card">
+          <h3>Boundary</h3>
+          <p>Staging access, test accounts, dummy data, public repositories, or minimal reproductions are enough. Production secrets and private customer data are out of scope.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Proof samples</h2>
+      <ul class="proof-list">
+        <li>
+          <strong>QA bug triage sample</strong><br>
+          <a href="qa-bug-triage-demo.html">Bug ranking, repro notes, and release-risk summary</a>
+        </li>
+        <li>
+          <strong>SaaS QA diagnostic sample</strong><br>
+          <a href="saas-qa-diagnostic-sample.html">Two-hour diagnostic with issue table and regression checklist</a>
+        </li>
+        <li>
+          <strong>UAT and accessibility first pass sample</strong><br>
+          <a href="uat-accessibility-demo.html">Pass/fail matrix, accessibility notes, and pre-launch checks</a>
+        </li>
+        <li>
+          <strong>Marketplace-safe portfolio boundary</strong><br>
+          <a href="marketplace-safe.html">No off-platform contact, payment, order, or request-form links</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Deliverable shape</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Part</th>
+            <th>What you get</th>
+            <th>Why it helps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Issue table</td>
+            <td>Each finding has severity, area, repro steps, expected behavior, actual behavior, and suggested next action.</td>
+            <td>It lets a founder or engineering lead decide what to fix first without reading a long report.</td>
+          </tr>
+          <tr>
+            <td>Risk summary</td>
+            <td>A short view of what can block launch, harm conversion, confuse users, or create support load.</td>
+            <td>It separates launch blockers from polish items.</td>
+          </tr>
+          <tr>
+            <td>Regression checklist</td>
+            <td>A short checklist for retesting after fixes, written in plain product language.</td>
+            <td>It reduces the chance of fixing one bug while reintroducing another.</td>
+          </tr>
+          <tr>
+            <td>Next slice</td>
+            <td>A practical recommendation for whether to continue with deeper QA, automation, product review, or stop.</td>
+            <td>It keeps the first milestone small and prevents scope drift.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Good fit</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Before launch</h3>
+          <p>You need a fresh pass on one risky flow before a release, demo, or customer handoff.</p>
+        </article>
+        <article class="card">
+          <h3>Bug-heavy beta</h3>
+          <p>You have rough user feedback and need it sorted into reproducible issues and priorities.</p>
+        </article>
+        <article class="card">
+          <h3>Small founder team</h3>
+          <p>You do not need a full QA department. You need a focused outside pass with clear notes.</p>
+        </article>
+        <article class="card">
+          <h3>Automation later</h3>
+          <p>You want to know what is worth automating after the first manual pass, not before.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Not a fit</h2>
+      <ul>
+        <li>Tasks that require production passwords, private customer records, real payment credentials, bank data, wallet data, KYC details, production cookies, or production tokens.</li>
+        <li>Work that asks for CAPTCHA bypass, anti-bot bypass, scraping private dashboards, account automation, refund handling, dispute handling, or platform rule bypass.</li>
+        <li>Open-ended product management, full QA ownership, or broad consulting without a narrow first milestone.</li>
+      </ul>
+      <p class="warning"><strong>Payment-like flows:</strong> test mode, sandbox, mock data, or staging only. Real payment movement and production financial data are not part of this service.</p>
+    </section>
+
+    <footer>
+      Last updated: 2026-07-05. Portfolio proof only, not an order form.
+    </footer>
+  </main>
+</body>
+</html>

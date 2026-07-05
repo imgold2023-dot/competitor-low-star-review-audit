@@ -14,6 +14,7 @@
 
 - 只展示能力、交付范围、公开作品证明和安全边界。
 - 已补充 `portfolio-section-demo.html`，用于展示响应式作品集 section / one-page starter 的交付形态。
+- 已补充 `qa-paid-trial-proof.html`，用于展示 QA / UAT 首个 2 小时 paid trial 的收敛、交付和验收形态。
 - 不提供站外联系方式。
 - 不提供站外下单、付款、询价或服务请求表单。
 - 明确提示：如果客户来自自由职业平台，应在该平台内沟通、确认范围、创建订单和付款。
@@ -23,6 +24,7 @@
 在自由职业平台内：
 
 - 使用 `marketplace-safe.html` 作为作品链接。
+- 如果投递的是 QA / UAT / bug triage / release readiness 小单，可附加 `qa-paid-trial-proof.html` 作为首个 paid trial 的聚合证明。
 - 如果投递的是作品集网站、个人主页或 portfolio section 任务，可附加 `portfolio-section-demo.html` 作为能力证明。
 - 不引导客户去 GitHub issue、邮箱、社交账号或其他站外渠道提交需求。
 - 不要求站外付款。

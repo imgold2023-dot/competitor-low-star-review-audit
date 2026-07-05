@@ -6,12 +6,14 @@
 公开样例报告页：`sample-report.html`
 小型软件交付服务作品页：`services/index.html`
 平台安全作品页：`services/marketplace-safe.html`
+QA Paid Trial Proof 页面：`services/qa-paid-trial-proof.html`
 SaaS QA Diagnostic 样例页：`services/saas-qa-diagnostic-sample.html`
 UAT 与 Accessibility First Pass 样例页：`services/uat-accessibility-demo.html`
 中文伴随版本：`index.zh-CN.md`
 样例报告中文伴随版本：`sample-report.zh-CN.md`
 服务作品页中文说明：`services/README.zh-CN.md`
 平台安全作品页中文说明：`services/marketplace-safe.zh-CN.md`
+QA Paid Trial Proof 中文说明：`services/qa-paid-trial-proof.zh-CN.md`
 SaaS QA Diagnostic 样例页中文说明：`services/saas-qa-diagnostic-sample.zh-CN.md`
 UAT 与 Accessibility First Pass 样例页中文说明：`services/uat-accessibility-demo.zh-CN.md`
 发布清单：`github-pages-publish-checklist.zh-CN.md`
@@ -34,6 +36,7 @@ UAT 与 Accessibility First Pass 样例页中文说明：`services/uat-accessibi
 - TypeScript / Node.js 小 bug 修复；
 - Playwright 回归测试；
 - 公开竞品评论审计；
+- QA / UAT 首个 paid trial proof；
 - SaaS / AI 产品 QA diagnostic。
 - UAT / accessibility / pre-launch QA first pass。
 
@@ -49,9 +52,9 @@ UAT 与 Accessibility First Pass 样例页中文说明：`services/uat-accessibi
 
 ## 平台安全作品页
 
-`services/marketplace-safe.html` 用于自由职业平台资料或 proposal。
+`services/marketplace-safe.html` 和 `services/qa-paid-trial-proof.html` 用于自由职业平台资料或 proposal。
 
-该页面只作为 portfolio proof，不包含站外联系方式、站外下单、站外付款或服务请求表单。若客户来自 Upwork、Fiverr、Freelancer、Guru、PeoplePerHour、Contra 等平台，沟通、范围确认、订单、交付和付款都应留在对应平台内。
+这些页面只作为 portfolio proof，不包含站外联系方式、站外下单、站外付款或服务请求表单。若客户来自 Upwork、Fiverr、Freelancer、Guru、PeoplePerHour、Contra 等平台，沟通、范围确认、订单、交付和付款都应留在对应平台内。
 
 收入冲刺中：
 
